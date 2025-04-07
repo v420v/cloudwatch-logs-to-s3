@@ -5,24 +5,7 @@
 
 This project demonstrates how to utilize CloudWatch Logs and Firehose to transfer logs from an EC2 instance to S3 using AWS CloudFormation.
 
-```mermaid
-architecture-beta
-    group vpc(logos:aws-vpc)[VPC]
-
-    group public_subnet[Public Subnet] in vpc
-
-    service ec2(logos:aws-ec2)[Log Server in Go] in public_subnet
-
-    service igw(logos:aws-vpc)[Internet Gateway]
-    service cwl(logos:aws-cloudwatch)[CloudWatch Logs]
-    service firehose(logos:aws-kinesis)[Firehose]
-    service s3(logos:aws-s3)[S3 Bucket]
-
-    ec2:R --> L:cwl
-    cwl:R --> L:firehose
-    firehose:R --> L:s3
-    igw:B <--> T:ec2
-```
+<img width="100%" alt="Screenshot 2025-04-08 at 2 25 11" src="https://github.com/user-attachments/assets/705bcdbe-c44c-42c1-a3d6-d6fe503df7d8" />
 
 ## Project Overview
 
